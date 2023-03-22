@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DialogContent {
+public class DialogContent extends Parent{
 
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(),this);
@@ -27,12 +27,7 @@ public class DialogContent {
 
     public void findAndClick(WebElement element){
 
-        WebDriverWait wait= new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
-        js.executeScript("arguments[0].scrollIntoView;",element);
-
-        element.click();
+       clickFunction(element);
 
 
 
@@ -40,14 +35,8 @@ public class DialogContent {
 
     public void findAndSend(WebElement element, String text){
 
-        WebDriverWait wait= new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
-        js.executeScript("arguments[0].scrollIntoView;",element);
 
-        element.clear();
-        element.sendKeys(text);
-
+        sendKeysFunction(element, text);
 
     }
 }

@@ -23,8 +23,8 @@ public class _01_LoginSteps {
     public void enterUsernameAndPasswordAndClickLoginButtonActionIçinKullanılır() {
         DialogContent dc=new DialogContent();
 
-        WebDriverWait wait= new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(dc.username));
+        //WebDriverWait wait= new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        //wait.until(ExpectedConditions.visibilityOf(dc.username));
 
         //dc.username.sendKeys("turkeyts");
         //dc.password.sendKeys("TechnoStudy123");
