@@ -7,10 +7,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
 public class _01_LoginSteps {
+
+    DialogContent dc=new DialogContent();
     @Given("Navigate to Campus")
     public void navigateToCampus() {
 
@@ -19,9 +22,9 @@ public class _01_LoginSteps {
 
     }
 
-    @When("Enter username and password and click login button\\(action için kullanılır)")
-    public void enterUsernameAndPasswordAndClickLoginButtonActionIçinKullanılır() {
-        DialogContent dc=new DialogContent();
+    @When("Enter username and password and click login button")
+    public void enterUsernameAndPasswordAndClickLoginButton() {
+
 
         //WebDriverWait wait= new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         //wait.until(ExpectedConditions.visibilityOf(dc.username));
@@ -30,14 +33,18 @@ public class _01_LoginSteps {
         //dc.password.sendKeys("TechnoStudy123");
         //dc.loginBtn.click();
 
-        dc.findAndSend(dc.username,"turkeyts");
-        dc.findAndSend(dc.password,"TechnoStudy123");
-        dc.findAndClick(dc.loginBtn);
+        dc.sendKeysFunction(dc.username, "turkeyts");
+        dc.sendKeysFunction(dc.password, "TechnoStudy123");
+        dc.clickFunction(dc.loginBtn);
     }
 
 
-    @Then("User should login successfully\\(genelde result için kullanılır)")
-    public void userShouldLoginSuccessfullyGeneldeResultIçinKullanılır() {
+    @Then("User should login succesfully")
+    public void userShouldLoginSuccessfully() {
+
+
+        dc.verifyContainsTextFunction(dc.txtTechnoStudy,"Techno");
+
 
 
     }
