@@ -21,8 +21,8 @@ public class _02_CountrySteps {
     public void createACountry() {
 
         dc.clickFunction(dc.addButton);
-        dc.sendKeysFunction(dc.nameInput,"isKla1");
-        dc.sendKeysFunction(dc.codeInput,"111");
+        dc.sendKeysFunction(dc.nameInput,"iKa1657");
+        dc.sendKeysFunction(dc.codeInput,"1116");
         dc.clickFunction(dc.saveBtn);
 
     }
@@ -30,5 +30,15 @@ public class _02_CountrySteps {
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
 
+        dc.verifyContainsTextFunction(dc.successMessage,"success");
+
+    }
+
+    @When("create a country name as {string} code as {string}")
+    public void createACountryNameAsCodeAs(String name, String code) {
+        dc.clickFunction(dc.addButton);
+        dc.sendKeysFunction(dc.nameInput,name);
+        dc.sendKeysFunction(dc.codeInput,code);
+        dc.clickFunction(dc.saveBtn);
     }
 }

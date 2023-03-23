@@ -43,6 +43,8 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']//button")
     public WebElement saveBtn;
 
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    public WebElement successMessage;
 
 
 
