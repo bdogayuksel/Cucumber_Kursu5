@@ -23,6 +23,7 @@ public class _02_CountrySteps {
         dc.clickFunction(dc.addButton);
         dc.sendKeysFunction(dc.nameInput,"isKla1");
         dc.sendKeysFunction(dc.codeInput,"111");
+        dc.clickFunction(dc.saveBtn);
 
     }
 
