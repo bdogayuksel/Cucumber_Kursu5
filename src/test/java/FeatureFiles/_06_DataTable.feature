@@ -7,6 +7,7 @@ Feature: DataTable Functionality
     Then User should login succesfully
 
     Scenario: Create Country
+
       And Click on the element in LeftNav
           | setup |
           | parameters |
@@ -27,6 +28,7 @@ Feature: DataTable Functionality
 
 
   Scenario: Create Nationality
+
     And Click on the element in LeftNav
       | setup |
       | parameters |

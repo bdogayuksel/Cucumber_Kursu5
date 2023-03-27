@@ -16,7 +16,8 @@ public class _06_DataTableSteps {
     DialogContent dc=new DialogContent();
     @And("Click on the element in LeftNav")
     public void clickOnTheElementInLeftNav(DataTable items) {
-        List<String > strButtons= items.asList(String.class);
+
+        List<String> strButtons= items.asList(String.class);
 
         for (String strButton:strButtons){
 
